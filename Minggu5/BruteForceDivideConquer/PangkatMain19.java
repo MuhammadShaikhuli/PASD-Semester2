@@ -16,11 +16,11 @@ public class PangkatMain19 {
 
         System.out.println("Hasil pangkat Brute Force:");
         for (Pangkat19 p : png){
-            System.out.println(p.nilai +"^" +p.pangkat +": " +p.pangkatBF(p.nilai, p.pangkat));
+            System.out.println(p.nilai + "^" + p.pangkat + ": " + p.pangkatBF());
         }
         System.out.println("Hasil pangkat Divide Conquer:");
         for (Pangkat19 p : png){
-            System.out.println(p.nilai + "^" +p.pangkat + ": " +p.pangkatDC(p.nilai, p.pangkat));
+            System.out.println(p.nilai + "^" +p.pangkat +": " +p.pangkatDC(p.nilai, p.pangkat));
         }
     }
 }
