@@ -1,13 +1,13 @@
 public class Faktorial19 {
     int faktorialBF_While(int n) {
-    int faktor = 1;
-    int i = 1;
-    while (i <= n) {
-        faktor = faktor * i;
-        i++;
+        int faktor = 1;
+        int i = 1;
+        while (i <= n) {
+            faktor = faktor * i;
+            i++;
+        }
+        return faktor;
     }
-    return faktor;
-}
     
     int faktorialDC(int n){
         if(n==1){
