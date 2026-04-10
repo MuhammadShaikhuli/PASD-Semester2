@@ -65,7 +65,7 @@ public class MahasiswaBerprestasi_19 {
         for (int i = 1; i < listMhs.length; i++) {
             Mahasiswa_19 temp = listMhs[i];
             int j = i;
-            while (j > 0 && listMhs[j - 1].ipk < temp.ipk) {
+            while (j > 0 && listMhs[j - 1].ipk > temp.ipk) {
             listMhs[j] = listMhs[j - 1];
             j--;
             }
@@ -100,6 +100,23 @@ public class MahasiswaBerprestasi_19 {
             System.out.println("kelas\t : " +listMhs[pos].kelas);
             System.out.println("ipk\t : " +x);
         }
+    }
+
+    int findBinarySearch(double cari, int left, int right){
+        int mid;
+        if (right>=left){
+            mid = (left+right)/2;
+            if (cari == listMhs[mid].ipk){
+                return (mid);
+            } 
+            else if (listMhs[mid].ipk>cari){
+                return findBinarySearch(cari, left, mid-1);
+            }
+            else {
+                return findBinarySearch(cari, mid+1, right);
+            }
+        }
+        return -1;
     }
 
 }
