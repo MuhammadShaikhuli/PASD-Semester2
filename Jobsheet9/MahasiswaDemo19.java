@@ -47,9 +47,18 @@ public class MahasiswaDemo19 {
                 System.out.println("Nama\tNIM\tKelas");
                 stack.print();
                 break;
-                default:
+            case 5:
+                Mahasiswa19 bawah = stack.peekBawah();
+                if (bawah != null){
+                    System.out.println("Tugas pertama dikumpulkan oleh: " +bawah.nama);
+                }
+                break;
+            case 6:
+                System.out.println("Jumlah Tugas saat ini: " + stack.count());
+                break;
+            default:
                 System.out.println("Pilihan tidak valid.");
             }
-        } while (pilih >= 1 && pilih <= 4);
+        } while (pilih >= 1 && pilih <= 6);
     }
 }
