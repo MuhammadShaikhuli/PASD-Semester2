@@ -35,23 +35,32 @@ public class RestoMain19 {
                 case 3: // hapus antrian dan pesan
                     Pembeli19 dipanggil = antreanList.removeAntrean();
                     if (dipanggil != null) {
+                        String tambah; // [TAMBAHAN] deklarasi variable tambah untuk menyimpan konfirmasi
+
+                        do { // [TAMBAHAN] ]menggunakan perulangaN Do-while agar pembeli dapat memesan lebih dari 1 pesanan
                         System.out.print("Kode Pesanan : ");
                         int kode = sc.nextInt(); sc.nextLine();
                         System.out.print("Nama Pesanan : ");
                         String nPesanan = sc.nextLine();
                         System.out.print("Harga        : ");
                         int harga = sc.nextInt();
+                        sc.nextLine();
                         
                         laporanList.addPesanan(new Pesanan19(kode, nPesanan, harga));
                         System.out.println(dipanggil.namaPembeli + " telah memesan " + nPesanan);
+
+                        System.out.print("\nApakah ingin menambah pesanan? (Y/N): "); // [TAMBAHAN] meminta input konfirmasi pelanggan 
+                        tambah = sc.nextLine();
+                        } while (tambah.equalsIgnoreCase("Y"));
+
                     } else {
                         System.out.println("Antrean kosong!");
                     }
                     break;
-                case 4:
+                case 4: // Menampilkan laporan pesanan 
                     laporanList.printLaporanPesanan();
                     break;
-                case 5:
+                case 5: // Hitung total pendapatan
                 laporanList.hitungTotalPendapatan();
                 break;
             }
